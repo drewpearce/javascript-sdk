@@ -28,6 +28,8 @@
 
         if(response.hasOwnProperty('session_token')) {
             setToken('token', response.session_token);
+            FS.identify(response.email);
+            console.log(FS.getCurrentSession());
             $.route('groups');
         }
         else {
